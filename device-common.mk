@@ -76,3 +76,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     device/google/zumapro/linker.config.json
+	
+# Google Assistant
+PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
