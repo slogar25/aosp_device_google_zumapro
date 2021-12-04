@@ -362,6 +362,11 @@ BOARD_USES_EXYNOS_SENSORS_DUMMY := true
 TARGET_EXYNOS_RIL_SOURCE := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
+ # Manifests
+DEVICE_MANIFEST_FILE += \
+    device/google/zumapro/android.hardware.security.rkp-service.citadel.xml \
+    device/google/zumapro/manifest_radio_ds.xml
+
 # GNSS
 # BOARD_USES_EXYNOS_GNSS_DUMMY := true
 
