@@ -601,4 +601,6 @@
 
     <!-- Exempt ImsService from privacy (location) indicators -->
     <string name="config_systemTelephonyPackage" translatable="false">com.shannon.imsservice</string>
+
+    <string name="config_gnssPsdsType">samsung</string>
 </resources>
