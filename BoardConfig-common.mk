@@ -81,7 +81,8 @@ AB_OTA_PARTITIONS += \
 	system_dlkm \
 	system_ext \
 	product \
-	vbmeta_system
+	vbmeta_system \
+	vbmeta_vendor
 
 ifneq ($(PRODUCT_BUILD_BOOT_IMAGE),false)
 AB_OTA_PARTITIONS += boot
@@ -161,6 +162,13 @@ BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
+
+# Enable chain partition for vendor.
+BOARD_AVB_VBMETA_VENDOR := vendor
+BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 
 # Enable chained vbmeta for boot images
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
@@ -431,6 +439,9 @@ BOARD_KERNEL_CMDLINE += log_buf_len=1024K
 
 # Protected VM firmware
 BOARD_PVMFWIMAGE_PARTITION_SIZE := 0x00100000
+
+# Duplicate Rules
+BUILD_BROKEN_DUP_RULES := true
 
 # pick up library for cleaning digital car keys on factory reset
 -include vendor/google_devices/gs-common/proprietary/BoardConfigVendor.mk
