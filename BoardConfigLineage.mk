@@ -8,6 +8,8 @@
 DEVICE_MANIFEST_FILE += \
     device/google/zumapro/android.hardware.security.rkp-service.citadel.xml \
     device/google/zumapro/manifest_radio_ds.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
+    device/google/zumapro/location/device_framework_matrix_product.xml
 
 # Partitions
 AB_OTA_PARTITIONS += \
