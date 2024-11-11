@@ -701,6 +701,9 @@ include device/google/gs-common/battery_mitigation/bcl.mk
 # storage pixelstats
 -include hardware/google/pixel/pixelstats/device.mk
 
+# Wireless Charging
+include device/google/gs-common/wireless_charger/wireless_charger.mk
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
