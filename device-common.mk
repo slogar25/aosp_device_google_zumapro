@@ -17,6 +17,10 @@
 -include vendor/google_devices/zumapro/proprietary/telephony/device-vendor.mk
 include device/google/zumapro/device.mk
 
+# AiAi Config
+PRODUCT_COPY_FILES += \
+    device/google/zumapro/allowlist_com.google.android.as.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/allowlist_com.google.android.as.xml
+
 # Telephony
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.carrierlock.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.carrierlock.xml
